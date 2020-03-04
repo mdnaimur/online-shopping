@@ -24,6 +24,12 @@
 			<scope>provided</scope>
 		</dependency>
 
+		<!-- to link shopping backed -->
+		<dependency>
+			<groupId>com.mnr</groupId>
+			<artifactId>shoppingbackend</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 
 		<!-- JUNIT -->
 		<dependency>
