@@ -88,45 +88,33 @@ public class ProductDaoImpl implements ProductDao {
 
 	@Override
 	public List<Product> getProductByParam(String param, int count) {
-	String query = "From Product WHERE active = true ORDER BY "+ param +"DESC";
-	
-	return sessionFactory.getCurrentSession()
-			.createQuery(query,Product.class)
-			.setFirstResult(0)
-			.setMaxResults(count)
-			.getResultList();
+		String query = "From Product WHERE active = true ORDER BY " + param + "DESC";
+
+		return sessionFactory.getCurrentSession().createQuery(query, Product.class).setFirstResult(0)
+				.setMaxResults(count).getResultList();
 	}
 
 	@Override
 	public List<Product> listActiveProducts() {
-		String selectActiveProduct ="FROM Product WHERE active = :active";
-		return sessionFactory
-				.getCurrentSession()
-				.createQuery(selectActiveProduct,Product.class)
-				.setParameter("active", true)
-				.getResultList();
+		String selectActiveProduct = "FROM Product WHERE active = :active";
+		return sessionFactory.getCurrentSession().createQuery(selectActiveProduct, Product.class)
+				.setParameter("active", true).getResultList();
 	}
 
 	@Override
 	public List<Product> listActiveProductsByCategory(int categoryId) {
-		
-		String selectActiveProductByCategory ="FROM Product Where active=:active AND categoryId =:categoryId ";
-		return sessionFactory.getCurrentSession()
-				.createQuery(selectActiveProductByCategory,Product.class)
-				.setParameter("active", true)
-				.setParameter("categoryId", categoryId)
-				.getResultList();
+
+		String selectActiveProductByCategory = "FROM Product Where active=:active AND categoryId =:categoryId ";
+		return sessionFactory.getCurrentSession().createQuery(selectActiveProductByCategory, Product.class)
+				.setParameter("active", true).setParameter("categoryId", categoryId).getResultList();
 	}
 
 	@Override
 	public List<Product> getLastestActiveProdycts(int count) {
 		// TODO Auto-generated method stub
 		return sessionFactory.getCurrentSession()
-				.createQuery("FROM product where active= active order by id",Product.class)
-				.setParameter("active", true)
-				.setFirstResult(0)
-				.setMaxResults(count)
-				.getResultList();
+				.createQuery("FROM product where active= :active order by id", Product.class)
+				.setParameter("active", true).setFirstResult(0).setMaxResults(count).getResultList();
 	}
 
 }
