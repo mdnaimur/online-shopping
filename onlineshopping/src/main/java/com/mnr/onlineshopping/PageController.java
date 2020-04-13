@@ -12,8 +12,14 @@ import com.mnr.shoppingbackend.dto.Category;
 @Controller
 public class PageController {
 	
-	@Autowired
+	
 	private CategoryDao categoryDao;
+
+	
+	@Autowired
+	public void setCategoryDao(CategoryDao categoryDao) {
+		this.categoryDao = categoryDao;
+	}
 
 	@RequestMapping(value = { "/", "/home", "/index" })
 	public ModelAndView index() {

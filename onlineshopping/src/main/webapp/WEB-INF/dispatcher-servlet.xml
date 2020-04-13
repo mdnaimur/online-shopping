@@ -12,8 +12,7 @@
 		base-package="com.mnr.onlineshopping">
 	</context:component-scan>
 	<context:component-scan
-		base-package="com.mnr.shoppingbackend.daoimpl">
-
+		base-package="com.mnr.shoppingbackend">
 	</context:component-scan>
 
 
@@ -28,5 +27,6 @@
 	<mvc:annotation-driven></mvc:annotation-driven>
 	<mvc:resources mapping="/resources/**"
 		location="/WEB-INF/assets/"></mvc:resources>
+
 
 </beans>
