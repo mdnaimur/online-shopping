@@ -2,7 +2,11 @@ package com.mnr.shoppingbackend.dto;
 
 import java.util.UUID;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 import org.springframework.stereotype.Component;
 
@@ -10,17 +14,26 @@ import org.springframework.stereotype.Component;
 @Entity
 public class Product {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String code;
 	private String name;
 	private String brand;
 	private String description;
+
+	@Column(name = "unit_price")
 	private double unitPrice;
 	private int quantity;
+	@Column(name = "is_active")
 	private boolean active;
+
+	@Column(name = "category_id")
 	private int categoryId;
+	@Column(name = "supplier_id")
 	private int supplierId;
-	private int puchases;
+	@Column(name = "purchases")
+	private int purchases;
 	private int views;
 
 	public Product() {
@@ -108,11 +121,11 @@ public class Product {
 	}
 
 	public int getPuchases() {
-		return puchases;
+		return purchases;
 	}
 
 	public void setPuchases(int puchases) {
-		this.puchases = puchases;
+		this.purchases = puchases;
 	}
 
 	public int getViews() {
@@ -127,11 +140,8 @@ public class Product {
 	public String toString() {
 		return "Product [id=" + id + ", code=" + code + ", name=" + name + ", brand=" + brand + ", description="
 				+ description + ", unitPrice=" + unitPrice + ", quantity=" + quantity + ", active=" + active
-				+ ", categoryId=" + categoryId + ", supplierId=" + supplierId + ", puchases=" + puchases + ", views="
+				+ ", categoryId=" + categoryId + ", supplierId=" + supplierId + ", puchases=" + purchases + ", views="
 				+ views + "]";
 	}
-	
-	
-	
 
 }
