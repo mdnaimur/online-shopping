@@ -24,22 +24,42 @@ public class ProductTestCase {
 
 	}
 	
+	/*
+	 * @Test public void testCRUDProduct() {
+	 * 
+	 * //create opperation product = new Product(); product.setName("Redmi 8 pro");
+	 * product.setBrand("Xaomi");
+	 * product.setDescription("This is descreption of Goriber Iphone");
+	 * product.setUnitPrice(1980.90); product.setActive(true);
+	 * product.setCategoryId(1); product.setSupplierId(2);
+	 * 
+	 * assertEquals("Something went wrong while inserting new product value data "
+	 * ,true,productDao.add(product));
+	 * 
+	 * 
+	 * }
+	 */
+	
+	
+	/*
+	 * @Test public void testListActiveProducts() {
+	 * assertEquals("Something wen wrong while fetching the list of products",2,
+	 * productDao.listActiveProducts().size()); }
+	 * 
+	 * @Test public void testListActiveProductsByCategory() {
+	 * assertEquals("Something went wrong while fetching the list of products!",
+	 * 1,productDao.listActiveProductsByCategory(1).size());
+	 * 
+	 * }
+	 */
+	
 	@Test
-	public void testCRUDProduct() {
+	public void testGetLatestActiveProduct() {
+		assertEquals("Something went wrong while fetching the list of products!",
+				2,productDao.getLastestActiveProdycts(2).size());
 		
-		//create opperation
-		product = new Product();
-		product.setName("Oppo selfi SS4");
-		product.setBrand("Opppo");
-		product.setDescription("This is descreption of oop selfi camera");
-		product.setUnitPrice(15680.90);
-		product.setActive(true);
-		product.setCategoryId(2);
-		product.setSupplierId(1);
-		
-		assertEquals("Something went wrong while inserting new product value data ",true,productDao.add(product));
-		
-		
-	}
+	} 
+	
+	
 
 }

@@ -26,7 +26,7 @@ public class Category {
 	@Column(name = "image_url")
 	private String imageURL;
 
-	@Column(name = "isActive")
+	@Column(name ="is_active")
 	private boolean active = true;
 
 	

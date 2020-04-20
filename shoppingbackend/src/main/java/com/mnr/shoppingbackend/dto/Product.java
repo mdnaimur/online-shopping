@@ -30,14 +30,14 @@ public class Product {
 
 	@Column(name = "category_id")
 	private int categoryId;
-	@Column(name = "supplier_id")
+	@Column(name = "suplier_id")
 	private int supplierId;
 	@Column(name = "purchases")
 	private int purchases;
 	private int views;
 
 	public Product() {
-		this.code = "PRD" + UUID.randomUUID().toString().substring(26).toUpperCase();
+		this.code = "PRD " + UUID.randomUUID().toString().substring(26).toUpperCase();
 	}
 
 	public int getId() {

@@ -3,8 +3,8 @@ package com.mnr.shoppingbackend.daoimpl;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.hibernate.query.Query;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Repository;
@@ -29,6 +29,7 @@ public class CategoryDaoImpl implements CategoryDao {
 
 	private static List<Category> categories = new ArrayList<>();
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<Category> list() {
         

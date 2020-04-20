@@ -22,12 +22,13 @@
 
 <script type="text/javascript">
 	window.menu = '${title}';
+	window.contextRoot ='${contextRoot}';
 </script>
 <!-- Bootstrap core CSS -->
 <link href="${css}/bootstrap.min.css" rel="stylesheet">
 
 <link href="${css}/bootstrap.flaty.them.css" rel="stylesheet">
-
+<link href="${css}/dataTables.bootstrap.css" rel="stylesheet">
 <!-- Custom styles for this template -->
 <link href="${css}/myapp.css" rel="stylesheet">
 </head>
@@ -51,7 +52,8 @@
 
 
 			<!-- loading Contact us content -->
-			<c:if test="${userClickAllProducts==true or userClickCategoryProducts==true}"><%@include
+			<c:if
+				test="${userClickAllProducts==true or userClickCategoryProducts==true}"><%@include
 					file="listProducts.jsp"%></c:if>
 		</div>
 		<!-- Footer -->
@@ -59,6 +61,10 @@
 		<!-- Bootstrap core JavaScript -->
 		<script src="${js}/jquery-3.3.1.min.js"></script>
 		<script src="${js}/bootstrap.bundle.min.js"></script>
+		<!-- Data Tables plugin -->
+		<script src="${js}/jquery.dataTables.js"></script>
+		<script src="${js}/dataTables.bootstrap.js"></script>
+
 		<!-- self coded js -->
 		<script src="${js}/myapp.js"></script>
 	</div>

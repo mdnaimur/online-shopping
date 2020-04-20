@@ -113,7 +113,7 @@ public class ProductDaoImpl implements ProductDao {
 	public List<Product> getLastestActiveProdycts(int count) {
 		// TODO Auto-generated method stub
 		return sessionFactory.getCurrentSession()
-				.createQuery("FROM product where active= :active order by id", Product.class)
+				.createQuery("FROM Product where active =:active order by id", Product.class)
 				.setParameter("active", true).setFirstResult(0).setMaxResults(count).getResultList();
 	}
 
