@@ -33,28 +33,51 @@ $(function() {
 		$table.DataTable({
 			lengthMenu : [ [ 3, 5, 10, -1 ],
 					[ '3 Records', '5 Records', '10 Records', 'All' ] ],
-			pageLength : 5,
+			pageLength : 3,
 			ajax : {
 				url : jsonUrl,
 				dataSrc : ''
 			},
-			columns:[
-				{
-					data:'name'
+			columns : [ {
+				data:'code',
+				mRender:function(data,type,row){
 					
-				},
-				{
-					data:'brand'
-					
-				},
-				{
-					data:'unitPrice'
-					
-				},
-				{
-					data:'nquantityame'
-					
+					return '<img src="' + window.contextRoot
+					+ '/resources/images/' + data
+					+ '.jpg" class="dataTableImg"/>';
+
 				}
+				
+			},
+				
+				{
+				data : 'name'
+
+			}, {
+				data : 'brand'
+
+			}, {
+				data : 'unitPrice',
+				mRender : function(data, type, row) {
+					return ' &#2547; ' +data;
+				}
+
+			}, {
+				data : 'quantity'
+
+			},
+			
+			{
+				data:'id',
+				bSortable:false,
+				mRender:function(data,type,row)
+				{
+				  var str = '';
+				  str+= '<a href="'+window.contextRoot+'/show/'+data+'/product" class="btn btn-primary"><span class="glyphicon glyphicon-eye-open"></span> </a> &#160;';
+				  str+= '<a href="'+window.contextRoot+'/cart/add/'+data+'/product" class="btn btn-success"> <span class="glyphicon glyphicon-shopping-cart"></a>';
+				  return str;
+				}
+			}
 			]
 		});
 	} else {
