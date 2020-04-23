@@ -35,6 +35,7 @@ public class CategoryDaoImpl implements CategoryDao {
         
 		String selectActiveCategory = "From Category where active=:active";
 		
+		@SuppressWarnings("rawtypes")
 		Query query = sessionFactory.getCurrentSession().createQuery(selectActiveCategory);
 		
 		query.setParameter("active", true);

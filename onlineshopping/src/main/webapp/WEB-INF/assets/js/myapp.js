@@ -26,7 +26,8 @@ $(function() {
 		if (window.categoryId == '') {
 			jsonUrl = window.contextRoot + '/json/data/all/products';
 		} else {
-			jsonUrl = window.contextRoot + '/json/data/' + window.categoryId
+			console.log('does not working'+window.categoryId);
+			jsonUrl = window.contextRoot + '/json/data/category/' + window.categoryId
 					+ '/products';
 		}
 

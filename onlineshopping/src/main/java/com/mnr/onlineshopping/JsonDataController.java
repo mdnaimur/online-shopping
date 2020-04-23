@@ -28,7 +28,7 @@ public class JsonDataController {
 	
 	@RequestMapping("/category/{id}/products")
 	@ResponseBody
-	public List<Product> getProductsByCategory(@PathVariable int id){
+	public List<Product> getProductsByCategory(@PathVariable("id") int id){
 		
 		return productDao.listActiveProductsByCategory(id);
 	}
