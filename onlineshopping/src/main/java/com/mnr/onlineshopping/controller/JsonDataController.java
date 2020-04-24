@@ -1,4 +1,4 @@
-package com.mnr.onlineshopping;
+package com.mnr.onlineshopping.controller;
 
 import java.util.List;
 

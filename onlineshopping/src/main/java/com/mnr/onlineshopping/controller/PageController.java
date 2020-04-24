@@ -1,4 +1,4 @@
-package com.mnr.onlineshopping;
+package com.mnr.onlineshopping.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.mnr.onlineshopping.exception.ProductNotFoundException;
 import com.mnr.shoppingbackend.dao.CategoryDao;
 import com.mnr.shoppingbackend.dao.ProductDao;
 import com.mnr.shoppingbackend.dto.Category;
@@ -97,12 +98,13 @@ public class PageController {
 	/**
 	 * Single product view*/
 	@RequestMapping(value="/show/{id}/product")
-	public ModelAndView showSingleProduct(@PathVariable int id)
+	public ModelAndView showSingleProduct(@PathVariable int id) throws ProductNotFoundException
 	{
 		
 		ModelAndView mv= new ModelAndView("page");
 		Product product = productDao.get(id);
 		
+		if(product==null) throw new ProductNotFoundException();
 		//update the view count
 		product.setViews(product.getViews()+1);
 		productDao.update(product);

@@ -8,11 +8,11 @@
 
 	</appender>
 <!-- level="DEBUG" additivity = "false" -->
-	<logger name="com.mnr" level="INFO">
+	<logger name="com.mnr" level="DEGUG" additivity="false">
 		<appender-ref ref="consoleAppender"/>	
 	</logger>	
 
-	<root>
+	<root leavel="INFO">
 		<appender-ref ref="consoleAppender"/>
 	</root>
 
