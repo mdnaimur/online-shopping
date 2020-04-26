@@ -10,6 +10,9 @@ $(function() {
 	case 'All Products':
 		$('#listProducts').addClass('active');
 		break;
+	case 'Manage Products':
+		$('#manageProducts').addClass('active');
+		break;
 	default:
 		$('#listProducts').addClass('active');
 		$('#a_' + menu).addClass('active');
@@ -108,6 +111,13 @@ $(function() {
 				});
 	} else {
 		console.log('nothing to print');
+	}
+
+	$alert = $('.alert');
+	if ($alert.lenght) {
+		setTimeout(function() {
+			$alert.fadeOut('slow');
+		}, 3000);
 	}
 
 });
