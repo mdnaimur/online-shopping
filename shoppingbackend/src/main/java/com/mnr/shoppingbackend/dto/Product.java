@@ -7,10 +7,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Transient;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 
 import org.springframework.stereotype.Component;
+import org.springframework.web.multipart.MultipartFile;
 
 @Component
 @Entity
@@ -44,7 +46,27 @@ public class Product {
 	private int views;
 
 	public Product() {
-		this.code = "PRD " + UUID.randomUUID().toString().substring(26).toUpperCase();
+		this.code = "PRD" + UUID.randomUUID().toString().substring(26).toUpperCase();
+	}
+	
+	@Transient
+	MultipartFile file;
+	
+
+	public int getPurchases() {
+		return purchases;
+	}
+
+	public void setPurchases(int purchases) {
+		this.purchases = purchases;
+	}
+
+	public MultipartFile getFile() {
+		return file;
+	}
+
+	public void setFile(MultipartFile file) {
+		this.file = file;
 	}
 
 	public int getId() {
