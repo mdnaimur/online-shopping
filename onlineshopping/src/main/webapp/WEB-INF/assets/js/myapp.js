@@ -244,7 +244,9 @@ $(function() {
 								bSortable : false,
 								mRender : function(data, type, row) {
 									var str = '';
-									str += '<a href="'+window.contextRoot+'/manage/'
+									str += '<a href="'
+											+ window.contextRoot
+											+ '/manage/'
 											+ data
 											+ '/product" class="btn btn-warning">';
 									str += '<span class="glyphicon glyphicon-pencil"></span></a>';
@@ -311,4 +313,87 @@ $(function() {
 				});
 	}
 	// --------------------------
+
+	// ------
+	// ---- validation category from
+	// ------
+	$categoryForm = $('#categoryForm');
+
+	if ($categoryForm.length) {
+
+		$categoryForm.validate({
+			rules : {
+				name : {
+					required : true,
+					minlength : 3
+				},
+				description : {
+					required : true,
+					minlength : 3
+				}
+			},
+			messages : {
+				name : {
+					required : 'Please enter product name!',
+					minlength : 'Please enter atleast five characters'
+				},
+				description : {
+					required : 'Please enter product name!',
+					minlength : 'Please enter atleast five characters'
+				}
+			},
+			errorElement : "em",
+			errorPlacement : function(error, element) {
+				errorPlacement(error, element);
+			}
+		}
+
+		);
+
+	}
+
+	/* validating the loginform */
+
+	// validating the product form element
+	// fetch the form element
+	$loginForm = $('#loginForm');
+
+	if ($loginForm.length) {
+
+		$loginForm.validate({
+			rules : {
+				username : {
+					required : true,
+					email : true
+
+				},
+				password : {
+					required : true
+				}
+			},
+			messages : {
+				username : {
+					required : 'Please enter your email!',
+					email : 'Please enter a valid email address!'
+				},
+				password : {
+					required : 'Please enter your password!'
+				}
+			},
+			errorElement : "em",
+			errorPlacement : function(error, element) {
+				// Add the 'help-block' class to the error element
+				error.addClass("help-block");
+
+				// add the error label after the input element
+				error.insertAfter(element);
+			}
+		}
+
+		);
+
+	}
+
+	// ------------------------------------
+
 });

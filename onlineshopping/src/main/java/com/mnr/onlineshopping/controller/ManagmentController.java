@@ -56,6 +56,11 @@ public class ManagmentController {
 			if (operation.equals("product")) {
 				mv.addObject("message", "Product Sumitted Successfuly");
 			}
+			else if(operation.equals("category")) {
+				mv.addObject("message", "Category Sumitted Successfuly");
+				
+				
+			}
 		}
 
 		return mv;
@@ -85,14 +90,12 @@ public class ManagmentController {
 	public String handleProductSubmission(@Valid @ModelAttribute("product") Product mProduct, BindingResult results,
 			Model model, HttpServletRequest request) {
 
-		if(mProduct.getId()==0) {
-		new ProductValidator().validate(mProduct, results);
+		if (mProduct.getId() == 0) {
+			new ProductValidator().validate(mProduct, results);
 		}
-		
-		else
-		{
-			if(!mProduct.getFile().getOriginalFilename().equals(""))
-			{
+
+		else {
+			if (!mProduct.getFile().getOriginalFilename().equals("")) {
 				new ProductValidator().validate(mProduct, results);
 			}
 		}
@@ -140,9 +143,26 @@ public class ManagmentController {
 	}
 
 	@ModelAttribute("categories")
-	public List<Category> getCategory() {
+	public List<Category> getCategories() {
 
 		return categoryDao.list();
+
+	}
+
+	@ModelAttribute("category")
+	public Category getCategory() {
+
+		return new Category();
+	}
+
+	// to handle category submission
+
+	@RequestMapping(value = "/category", method = RequestMethod.POST)
+	public String handleCategorySubmission(@ModelAttribute Category category) {
+
+		categoryDao.add(category);
+
+		return "redirect:/manage/products?operation=category";
 
 	}
 

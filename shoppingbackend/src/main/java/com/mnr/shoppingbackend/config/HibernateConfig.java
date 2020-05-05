@@ -20,7 +20,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 public class HibernateConfig {
 
 	// change the below based on the DBMS you choose
-	private final static String DATABASE_URL = "jdbc:mysql://localhost:3306/onlineshopping";
+	private final static String DATABASE_URL = "jdbc:mysql://localhost:3306/onlineshopping?createDatabaseIfNotExist=true";
 	private final static String DATABASE_DRIVER = "com.mysql.jdbc.Driver";
 	private final static String DATABASE_DIALECT = "org.hibernate.dialect.MySQLDialect";
 	private final static String DATABASE_USERNAME = "root";
@@ -41,20 +41,6 @@ public class HibernateConfig {
 
 		return dataSource;
 	}
-
-	// sessionFactory bean will be available
-	/*
-	 * @Bean public SessionFactory getSessionFactory(DataSource dataSource) {
-	 * 
-	 * LocalSessionFactoryBuilder sessionBuilder = new
-	 * LocalSessionFactoryBuilder(dataSource);
-	 * 
-	 * sessionBuilder.addProperties(getHibernateProperties());
-	 * sessionBuilder.scanPackages("com.mnr.shoppingbackend.dto"); return
-	 * sessionBuilder.buildSessionFactory();
-	 * 
-	 * }
-	 */
 
 	@Bean
 	public SessionFactory getSessionFactory(DataSource dataSource) {
@@ -77,7 +63,7 @@ public class HibernateConfig {
 		properties.put("hibernate.show_sql", "true");
 		properties.put("hibernate.format_sql", "true");
 
-		// properties.put("hibernate.hbm2ddl.auto", "create");
+		properties.put("hibernate.hbm2ddl.auto", "update");
 
 		return properties;
 	}

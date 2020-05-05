@@ -27,6 +27,7 @@ public class CategoryDaoImpl implements CategoryDao {
 	@Autowired
 	private SessionFactory sessionFactory;
 
+	@SuppressWarnings("unused")
 	private static List<Category> categories = new ArrayList<>();
 
 	@SuppressWarnings("unchecked")
