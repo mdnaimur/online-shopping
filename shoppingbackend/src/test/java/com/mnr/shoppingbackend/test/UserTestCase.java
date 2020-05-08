@@ -77,15 +77,67 @@ public class UserTestCase {
 	 * }
 	 */
 
+	/*
+	 * @Test public void testUpdateCart() {
+	 * 
+	 * user = userDao.getByEmail("mdnaimurr@gmail.com");
+	 * 
+	 * cart = user.getCart(); cart.setGrandTotal(5555); cart.setCartLines(2);
+	 * assertEquals("Failed to update cart !",true,userDao.updateCart(cart)); }
+	 */
+
+	/*
+	 * @Test public void testAddAddress() { // need add user user = new User();
+	 * user.setFirstname("Md Naimur"); user.setLastname("Rahman");
+	 * user.setEmail("mdnaimurr@gmail.com"); user.setContactNumber("01521438923");
+	 * user.setRole("USER"); user.setPassword("1234");
+	 * 
+	 * assertEquals("Failed to add user !", true, userDao.addUser(user));
+	 * 
+	 * // add the add address address = new Address();
+	 * address.setAddressLineOne("Sonargaon,Narayanganj");
+	 * address.setAddressLineTwo("Dhaka, Bangladesh"); address.setCity("Sonargaon");
+	 * address.setState("Mograpara"); address.setCountry("Bangladesh");
+	 * address.setPostalCode("1441"); address.setBilling(true);
+	 * 
+	 * address.setUser(user); assertEquals("Failed to add address !", true,
+	 * userDao.addAddress(address));
+	 * 
+	 * // add the shipping address
+	 * 
+	 * address = new Address(); address.setAddressLineOne("Sonargaon,Narayanganj");
+	 * address.setAddressLineTwo("Dhaka, Bangladesh"); address.setCity("Sonargaon");
+	 * address.setState("Mograpara"); address.setCountry("Bangladesh");
+	 * address.setPostalCode("1441"); address.setShipping(true); // link it with the
+	 * address.setUser(user); // add the shipping address
+	 * assertEquals("Failed to add shipping address !", true,
+	 * userDao.addAddress(address)); }
+	 */
+
+	/*
+	 * @Test public void testAddAddressNext() {
+	 * 
+	 * user = userDao.getByEmail("mdnaimurr@gmail.com");
+	 * 
+	 * // add the add address address = new Address();
+	 * address.setAddressLineOne("Shibganj,Chapainawabganj");
+	 * address.setAddressLineTwo("Rajshahi, Bangladesh");
+	 * address.setCity("Shibganj"); address.setState("Chandpur");
+	 * address.setCountry("Bangladesh"); address.setPostalCode("6341");
+	 * address.setShipping(true);
+	 * 
+	 * address.setUser(user); assertEquals("Failed to add address !", true,
+	 * userDao.addAddress(address));
+	 * 
+	 * }
+	 */
+
 	@Test
-	public void testUpdateCart() {
-		
+	public void testGetAdress() {
+
 		user = userDao.getByEmail("mdnaimurr@gmail.com");
-		
-		cart = user.getCart();
-		cart.setGrandTotal(5555);
-		cart.setCartLines(2);
-		 assertEquals("Failed to update cart !",true,userDao.updateCart(cart));
+		assertEquals("Failed to fetch the list of address and size does not mathc address !", 2, userDao.lisShippingAddresses(user).size());
+		assertEquals("Failed to fetch the list of address and size does not mathc address !", "Sonargaon", userDao.getBillingAddress(user).getCity());
 	}
 
 }

@@ -15,14 +15,21 @@
 				</a></li>
 				<li class="nav-item" id="about"><a class="nav-link"
 					href="${contextRoot}/about">About</a></li>
-					
+
 				<li class="nav-item"><a class="nav-link" id="listProducts"
 					href="${contextRoot}/show/all/products">View Product</a></li>
 				<li class="nav-item"><a class="nav-link" id="contact"
 					href="${contextRoot}/contact">Contact</a></li>
-					
-					<li class="nav-item"><a class="nav-link" id="manageProducts"
+
+				<li class="nav-item"><a class="nav-link" id="manageProducts"
 					href="${contextRoot}/manage/products">Manage Products</a></li>
+			</ul>
+
+			<ul class="nav navbar-nav navbar-right">
+				<li id="register"><a href="${contextRoot}/register" class="nav-link">Sign up</a></li>
+				<li id="login"><a href="${contextRoot}/login" class="nav-link">Login</a></li>
+
+
 			</ul>
 		</div>
 	</div>
