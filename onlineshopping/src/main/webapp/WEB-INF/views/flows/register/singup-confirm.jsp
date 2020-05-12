@@ -15,8 +15,8 @@
 				<div class="panel-body">
 					<div class="text-center">
 						<h3>
-							Name : <strong>${registerModel.user.firstName}
-								${registerModel.user.lastName}</strong>
+							Name : <strong>${registerModel.user.firstname}
+								${registerModel.user.lastname}</strong>
 						</h3>
 						<h4>
 							Email : <strong>${registerModel.user.email}</strong>

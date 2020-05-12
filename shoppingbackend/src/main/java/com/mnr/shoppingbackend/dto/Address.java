@@ -21,20 +21,6 @@ public class Address implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	/*---------------------*/
-	 @ManyToOne
-	 private User user;
-	 
-	
-
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
-	}
-	/*-----------------------*/
 
 	@Column(name = "address_line_one")
 	private String addressLineOne;
@@ -57,8 +43,6 @@ public class Address implements Serializable {
 	public void setId(int id) {
 		this.id = id;
 	}
-
-	
 
 	public String getAddressLineOne() {
 		return addressLineOne;
@@ -124,6 +108,23 @@ public class Address implements Serializable {
 		this.billing = billing;
 	}
 
+	@Override
+	public String toString() {
+		return "Address [id=" + id + ", addressLineOne=" + addressLineOne + ", addressLineTwo=" + addressLineTwo
+				+ ", city=" + city + ", state=" + state + ", country=" + country + ", postalCode=" + postalCode
+				+ ", shipping=" + shipping + ", billing=" + billing + "]";
+	}
 	
+	
+	/*---------------------*/
+	@Column(name = "user_id")
+	private int userId;
+	
+	public int getUserId() {
+		return userId;
+	}
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
 
 }
