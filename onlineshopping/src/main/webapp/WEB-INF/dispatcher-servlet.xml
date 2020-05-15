@@ -13,9 +13,7 @@
 	<context:component-scan
 		base-package="com.mnr.onlineshopping">
 	</context:component-scan>
-	<context:component-scan
-		base-package="com.mnr.shoppingbackend">
-	</context:component-scan>
+
 
 
 
@@ -52,8 +50,8 @@
 	</webflow-config:flow-registry>
 
 
-	<webflow-config:flow-builder-services
-		id="flowBuilderServices" view-factory-creator="viewFactoryCreator" />
+	<webflow-config:flow-builder-services id="flowBuilderServices"
+		view-factory-creator="viewFactoryCreator" validator="validator" />
 
 
 	<bean
@@ -78,4 +76,7 @@
 	</bean>
 
 
+	<bean id="validator"
+		class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
+	</bean>
 </beans>

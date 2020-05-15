@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotBlank;
 
 @Entity
@@ -42,6 +43,19 @@ public class User implements Serializable {
 	private String password;
 	boolean enabled = true;
 	
+	//confirm password
+	
+	@Transient
+	private String confirmPassword;
+	
+	public String getConfirmPassword() {
+		return confirmPassword;
+	}
+
+	public void setConfirmPassword(String confirmPassword) {
+		this.confirmPassword = confirmPassword;
+	}
+
 	@OneToOne(mappedBy = "user",cascade =CascadeType.ALL)
 	private Cart cart;
 	

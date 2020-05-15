@@ -12,6 +12,7 @@
 	<properties>
 		<javaee.version>8.0.1</javaee.version>
 		<spring.version>5.2.4.RELEASE</spring.version>
+		<spring.security.version>5.3.1.RELEASE</spring.security.version>
 	</properties>
 
 	<dependencies>
@@ -77,6 +78,31 @@
 			<version>2.5.1.RELEASE</version>
 		</dependency>
 
+
+<!-- spring security -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-taglibs</artifactId>
+			<version>${spring.security.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>${spring.security.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+			<version>${spring.security.version}</version>
+		</dependency>
+		
+		 <dependency>
+        <groupId>org.springframework.security</groupId>
+        <artifactId>spring-security-config</artifactId>
+        <version>${spring.security.version}</version>
+    </dependency>
+		
+		
 	</dependencies>
 	<build>
 		<plugins>

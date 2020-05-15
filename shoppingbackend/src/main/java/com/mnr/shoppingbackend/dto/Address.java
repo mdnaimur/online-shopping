@@ -7,8 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "address")
@@ -23,15 +23,21 @@ public class Address implements Serializable {
 	private int id;
 
 	@Column(name = "address_line_one")
+	@NotBlank(message = "Please enter address line one")
 	private String addressLineOne;
 
 	@Column(name = "address_line_two")
+	@NotBlank(message = "Please enter address line two")
 	private String addressLineTwo;
+	@NotBlank(message = "Please enter city name")
 	private String city;
+	@NotBlank(message = "Please enter state name")
 	private String state;
+	@NotBlank(message = "Please enter country name")
 	private String country;
 
 	@Column(name = "postal_code")
+	@NotBlank(message = "Please enter postal code ")
 	private String postalCode;
 	private boolean shipping;
 	private boolean billing;
@@ -114,15 +120,15 @@ public class Address implements Serializable {
 				+ ", city=" + city + ", state=" + state + ", country=" + country + ", postalCode=" + postalCode
 				+ ", shipping=" + shipping + ", billing=" + billing + "]";
 	}
-	
-	
+
 	/*---------------------*/
 	@Column(name = "user_id")
 	private int userId;
-	
+
 	public int getUserId() {
 		return userId;
 	}
+
 	public void setUserId(int userId) {
 		this.userId = userId;
 	}

@@ -19,7 +19,7 @@
 
 	<view-state id="personal"
 		view="flows/register/singup-personal" model="user">
-		<transition on="billing" to="billing"></transition>
+		<transition on="billing" to="validate"></transition>
 		<on-exit>
 			<evaluate
 				expression="registerHandler.addUser(flowScope.registerModel,user)" />
@@ -35,6 +35,17 @@
 				expression="registerHandler.addBilling(flowScope.registerModel,billing)" />
 		</on-exit>
 	</view-state>
+	
+	<action-state id="validate">
+	  <evaluate expression="registerHandler.validateUser(user,messageContext)"></evaluate>
+	  
+	  <transition on="success" to ="billing"/>
+	   <transition on="failure" to="personal" />
+	</action-state>
+	
+	
+	
+	
 	<view-state id="confirm"
 		view="flows/register/singup-confirm" model="flowScope.registerModel">
 		<transition on="personal" to="personal" />
@@ -44,8 +55,9 @@
 
 	</view-state>
 	<action-state id="submit">
-	 <evaluate expression="registerHandler.saveAll(flowScope.registerModel)"/>
-	 <transition on="success" to ="success"  />
+		<evaluate
+			expression="registerHandler.saveAll(flowScope.registerModel)" />
+		<transition on="success" to="success" />
 	</action-state>
 
 
@@ -57,6 +69,6 @@
 	<!-- global Transition -->
 
 	<global-transitions>
-		<transition on="home" to="home"></transition>
+		<transition on="home" to="home" validate="false"></transition>
 	</global-transitions>
 </flow>

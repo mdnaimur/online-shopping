@@ -19,7 +19,22 @@ $(function() {
 		break;
 
 	}
-
+	
+	//to tackle the csrf token
+	
+	var token = $('meta[name="_csrf"]').attr('content');
+	var header = $('meta[name="_csrf_header"]').attr('content');
+	
+	
+	if(token.length>0 && header.length>0){
+		
+		$(documnet).ajaxSend(function(e,xhr,option){
+			
+			xhr.setRequestHeader(header,token);
+		});
+		
+		
+	}
 	// code for jquery dataTable
 	// create a database
 
