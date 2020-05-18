@@ -27,7 +27,7 @@
 		<intercept-url pattern="/**" access="permitAll" />
 
 		<form-login login-page="/login" />
-		<logout />
+
 
 		<access-denied-handler error-page="/access-denied" />
 	</http>

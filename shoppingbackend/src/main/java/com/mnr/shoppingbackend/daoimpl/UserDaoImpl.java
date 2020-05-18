@@ -62,7 +62,7 @@ public class UserDaoImpl implements UserDao {
 			return sessionFactory.getCurrentSession().createQuery(selectQuery, User.class).setParameter("email", email)
 					.getSingleResult();
 		} catch (Exception ex) {
-			ex.printStackTrace();
+			//ex.printStackTrace();
 			return null;
 		}
 	}

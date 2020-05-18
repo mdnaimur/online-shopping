@@ -19,22 +19,25 @@ $(function() {
 		break;
 
 	}
-	
-	//to tackle the csrf token
-	
+
+	// to tackle the csrf token
+
+	$.fn.dataTable.ext.errMode = function(obj, param, err) {
+		var tableId = obj.sTableId;
+		console.log('Handling DataTable issue of Table ' + tableId);
+	};
+
 	var token = $('meta[name="_csrf"]').attr('content');
 	var header = $('meta[name="_csrf_header"]').attr('content');
-	
-	
-	if(token.length>0 && header.length>0){
-		
-		$(documnet).ajaxSend(function(e,xhr,option){
-			
-			xhr.setRequestHeader(header,token);
+
+	if ((token != undefined && header != undefined)
+			&& (token.length > 0 && header.length > 0)) {
+		// set the token header for the ajax request
+		$(document).ajaxSend(function(e, xhr, options) {
+			xhr.setRequestHeader(header, token);
 		});
-		
-		
 	}
+
 	// code for jquery dataTable
 	// create a database
 
@@ -108,16 +111,28 @@ $(function() {
 											+ '/show/'
 											+ data
 											+ '/product" class="btn btn-primary"><span class="glyphicon glyphicon-eye-open"></span> </a> &#160;';
+									if (userRole == 'ADMIN') {
 
-									if (row.quantity < 1) {
-										str += '<a href="javascript:void(0)" class="btn btn-success disabled"> <span class="glyphicon glyphicon-shopping-cart"></a>';
-
-									} else {
 										str += '<a href="'
 												+ window.contextRoot
-												+ '/cart/add/'
+												+ '/manage/'
 												+ data
-												+ '/product" class="btn btn-success"> <span class="glyphicon glyphicon-shopping-cart"></a>';
+												+ '/product" class="btn btn-warning"> <span class="glyphicon glyphicon-pencil"></a>';
+									}
+
+									else {
+										if (row.quantity < 1) {
+											str += '<a href="javascript:void(0)" class="btn btn-success disabled"> <span class="glyphicon glyphicon-shopping-cart"></a>';
+
+										} else {
+
+											str += '<a href="'
+													+ window.contextRoot
+													+ '/cart/add/'
+													+ data
+													+ '/product" class="btn btn-success"> <span class="glyphicon glyphicon-shopping-cart"></a>';
+
+										}
 									}
 
 									return str;

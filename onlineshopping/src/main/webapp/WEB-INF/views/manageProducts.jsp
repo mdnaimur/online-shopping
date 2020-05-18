@@ -170,8 +170,8 @@
 						<div class="form-group">
 							<label class="control-label col-md-4">Name</label>
 							<div class="col-md-8 validate">
-								<sf:input type="text" path="name" name="name" class="form-control"
-									placeholder="Category Name" />
+								<sf:input type="text" path="name" name="name"
+									class="form-control" placeholder="Category Name" />
 							</div>
 						</div>
 
@@ -207,41 +207,44 @@
 		<div class="col-xs-12">
 
 			<div style="overflow: auto">
+				<div class="container-fluid">
+					<div class="table-responsive">
+						<table id="adminProductsTable"
+							class="table table-condensed table-bordered">
 
-				<table id="adminProductsTable"
-					class="table table-condensed table-bordered">
+							<thead>
+								<tr>
+									<th>Id</th>
 
-					<thead>
-						<tr>
-							<th>Id</th>
+									<th>&#8212;</th>
+									<th>Brand</th>
+									<th>Name</th>
 
-							<th>&#8212;</th>
-							<th>Brand</th>
-							<th>Name</th>
+									<th>Qty. Avail</th>
+									<th>Unit Price</th>
+									<th>Activate</th>
+									<th>Edit</th>
+								</tr>
+							</thead>
 
-							<th>Qty. Avail</th>
-							<th>Unit Price</th>
-							<th>Activate</th>
-							<th>Edit</th>
-						</tr>
-					</thead>
+							<tfoot>
+								<tr>
+									<th>Id</th>
+									<th>&#8212;</th>
+									<th>Brand</th>
+									<th>Name</th>
 
-					<tfoot>
-						<tr>
-							<th>Id</th>
-							<th>&#8212;</th>
-							<th>Brand</th>
-							<th>Name</th>
-
-							<th>Qty. Avail</th>
-							<th>Unit Price</th>
-							<th>Activate</th>
-							<th>Edit</th>
-						</tr>
-					</tfoot>
+									<th>Qty. Avail</th>
+									<th>Unit Price</th>
+									<th>Activate</th>
+									<th>Edit</th>
+								</tr>
+							</tfoot>
 
 
-				</table>
+						</table>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
