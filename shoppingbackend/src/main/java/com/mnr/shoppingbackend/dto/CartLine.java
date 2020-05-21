@@ -26,6 +26,8 @@ public class CartLine implements Serializable {
 	private Product product;
 	@Column(name = "cart_id")
 	private int cartId;
+	@Column(name = "total")
+	private double total;
 	@Column(name = "product_count")
 	private int productCount;
 	@Column(name = "buying_price")
@@ -80,5 +82,14 @@ public class CartLine implements Serializable {
 	public void setAvailable(boolean available) {
 		this.available = available;
 	}
+
+	public double getTotal() {
+		return total;
+	}
+
+	public void setTotal(double total) {
+		this.total = total;
+	}
+	
 
 }
