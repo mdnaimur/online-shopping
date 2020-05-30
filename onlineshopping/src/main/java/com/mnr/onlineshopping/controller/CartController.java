@@ -41,11 +41,20 @@ public class CartController {
 			case "unavailable":
 				mv.addObject("message", "This Item is not available!!");
 				break;
+		
+			case "modified":
+				mv.addObject("message", "One or more items inside cart has been modified!");
+				break;
 
 
 			}
 		}
-
+		else {
+			String response = cartService.validateCartLine();
+			if(response.equals("result=modified")) {
+				mv.addObject("message", "One or more items inside cart has been modified!");
+			}
+		}
 		mv.addObject("title", "User Cart");
 		mv.addObject("userClickShowCart", true);
 		mv.addObject("cartLines", cartService.getCartLines());
@@ -66,7 +75,7 @@ public class CartController {
 		String response = cartService.deleteCartLine(cartLineId);
 		return "redirect:/cart/show?" + response;
 	}
-	
+
 	@RequestMapping("/add/{productId}/product")
 	public String addCart(@PathVariable int productId) {
 
@@ -74,4 +83,14 @@ public class CartController {
 		return "redirect:/cart/show?" + response;
 	}
 
+	@RequestMapping("/validate")
+	public String validateCart() {
+		String response = cartService.validateCartLine();
+		if (!response.equals("result=success")) {
+			return "redirect:/cart/show?" + response;
+		} else {
+			return "redirect:/cart/checkout";
+		}
+
+	}
 }
