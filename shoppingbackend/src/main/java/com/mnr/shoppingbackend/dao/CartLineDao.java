@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.mnr.shoppingbackend.dto.Cart;
 import com.mnr.shoppingbackend.dto.CartLine;
+import com.mnr.shoppingbackend.dto.OrderDetail;
 
 public interface CartLineDao {
 	
@@ -17,4 +18,6 @@ public interface CartLineDao {
 	public CartLine getbyCartAndProduct(int cartId,int productId);
 	
 	boolean updateCart(Cart cart);
+	
+	boolean addOrderDetail(OrderDetail orderDetail);
 }

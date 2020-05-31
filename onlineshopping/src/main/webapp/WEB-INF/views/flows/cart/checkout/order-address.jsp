@@ -10,7 +10,7 @@
 			<hr />
 
 			<div class="row">
-			<!--
+		
 				<c:forEach items="${addresses}" var="address">
 					<div class="cols-xs-12">
 						<h3>${address.addressLineOne}</h3>
@@ -25,7 +25,7 @@
 						</div>
 					</div>
 				</c:forEach>
-				-->
+			
 			</div>
 
 
