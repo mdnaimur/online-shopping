@@ -88,7 +88,7 @@ public class ProductDaoImpl implements ProductDao {
 
 	@Override
 	public List<Product> getProductByParam(String param, int count) {
-		String query = "From Product WHERE active = true ORDER BY " + param + "DESC";
+		String query = "From Product WHERE active = true ORDER BY " + param ;
 
 		return sessionFactory.getCurrentSession().createQuery(query, Product.class).setFirstResult(0)
 				.setMaxResults(count).getResultList();

@@ -81,7 +81,7 @@
 							<div class="col-xs-6">
 								<address>
 									<strong>Billed To:</strong><br>
-									${orderDetail.user.firstName} ${orderDetail.user.lastName}<br>
+									${orderDetail.user.firstname} ${orderDetail.user.lastname}<br>
 									${orderDetail.billing.addressLineOne}<br>
 									${orderDetail.billing.addressLineTwo}<br>
 									${orderDetail.billing.city} - ${orderDetail.billing.postalCode}<br>
@@ -91,7 +91,7 @@
 							<div class="col-xs-6 text-right">
 								<address>
 									<strong>Shipped To:</strong><br>
-									${orderDetail.user.firstName} ${orderDetail.user.lastName}<br>
+									${orderDetail.user.firstname} ${orderDetail.user.lastname}<br>
 									${orderDetail.shipping.addressLineOne}<br>
 									${orderDetail.shipping.addressLineTwo}<br>
 									${orderDetail.shipping.city} -
@@ -141,10 +141,10 @@
 											<c:forEach items="${orderDetail.orderItems}" var="orderItem">
 												<tr>
 													<td>${orderItem.product.name}</td>
-													<td class="text-center">&#8377;
+													<td class="text-center">&#2547;
 														${orderItem.buyingPrice}</td>
 													<td class="text-center">${orderItem.productCount}</td>
-													<td class="text-right">&#8377; ${orderItem.total}</td>
+													<td class="text-right">&#2547; ${orderItem.total}</td>
 												</tr>
 											</c:forEach>
 										</tbody>
