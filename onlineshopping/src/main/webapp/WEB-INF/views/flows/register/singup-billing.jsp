@@ -6,9 +6,9 @@
 
 	<div class="row">
 
-		<div class="col-md-6 col-md-offset-3">
+		<div class="col-xs-8 col-md-offset-3 col-md-6 mt-1">
 
-			<div class="panel panel-primary">
+			<div class="panel panel-primary" style="float:none; margin-left:auto; margin-right:auto">
 
 				<div class="panel-heading">
 					<h4>Sign Up - Address</h4>

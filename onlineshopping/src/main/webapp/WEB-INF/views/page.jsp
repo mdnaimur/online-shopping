@@ -27,16 +27,29 @@
 	window.menu = '${title}';
 	window.contextRoot = '${contextRoot}';
 </script>
-<!-- Bootstrap core CSS -->
+
+<link
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+	crossorigin="anonymous">
+	
+	
+<link href ="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    
+<!-- Bootstrap core CSS
 
 
 <link href="${css}/bootstrap.min.css" rel="stylesheet">
-
-
 <link href="${css}/bootstrap.flaty.them.css" rel="stylesheet">
-<link href="${css}/dataTables.bootstrap.css" rel="stylesheet">
 
+
+<link href="${css}/dataTables.bootstrap.css" rel="stylesheet">
+ -->
 <!-- Custom styles for this template -->
+
 <link href="${css}/myapp.css" rel="stylesheet">
 <link rel="shortcut icon" href="favicon.ico">
 </head>
@@ -72,7 +85,7 @@
 					file="manageProducts.jsp"%></c:if>
 
 
-<c:if test="${userClickShowCart==true}"><%@include
+			<c:if test="${userClickShowCart==true}"><%@include
 					file="cart.jsp"%></c:if>
 		</div>
 		<!-- Footer -->
@@ -80,17 +93,28 @@
 		<!-- Bootstrap core JavaScript -->
 		<script src="${js}/jquery-3.3.1.min.js"></script>
 
+		<script
+			src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+			integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+			crossorigin="anonymous"></script>
 
+		<!--  -->
 		<script
 			src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
-
+			
+			
+			<script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+			
+			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+			<script src="https://use.fontawesome.com/518ddb4c0a.js"></script>
+		<!--  -
 		<script src="${js}/bootstrap.bundle.min.js"></script>
-		<!-- Data Tables plugin -->
+		
 		<script src="${js}/jquery.dataTables.js"></script>
 		<script src="${js}/dataTables.bootstrap.js"></script>
 		<script src="${js}/bootbox.min.js"></script>
 		<script src="${js}/jquery.validate.js"></script>
-
+->
 		<!-- self coded js -->
 		<script src="${js}/myapp.js"></script>
 	</div>

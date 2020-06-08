@@ -12,51 +12,56 @@
 		</button>
 		<div class="collapse navbar-collapse" id="navbarResponsive">
 			<ul class="navbar-nav ml-auto">
-				<li class="nav-item" id="home"><a class="nav-link" href="#">Home
+				<li class="nav-item" id="home"><a
+					class="nav-link category-item" href="${contextRoot}/home">Home
 						<span class="sr-only">(current)</span>
 				</a></li>
-				<li class="nav-item" id="about"><a class="nav-link"
-					href="${contextRoot}/about">About</a></li>
+				<li class="nav-item" id="about"><a
+					class="nav-link category-item" href="${contextRoot}/about">About</a></li>
 
-				<li class="nav-item"><a class="nav-link" id="listProducts"
-					href="${contextRoot}/show/all/products">View Product</a></li>
-				<li class="nav-item"><a class="nav-link" id="contact"
-					href="${contextRoot}/contact">Contact</a></li>
-	<security:authorize access="hasAuthority('ADMIN')">
-				<li class="nav-item"><a class="nav-link" id="manageProducts"
-					href="${contextRoot}/manage/products">Manage Products</a></li>
-					</security:authorize>
+				<li class="nav-item"><a class="nav-link category-item"
+					id="listProducts" href="${contextRoot}/show/all/products">View
+						Product</a></li>
+				<li class="nav-item"><a class="nav-link category-item"
+					id="contact" href="${contextRoot}/contact">Contact</a></li>
+				<security:authorize access="hasAuthority('ADMIN')">
+					<li class="nav-item"><a class="nav-link category-item"
+						id="manageProducts" href="${contextRoot}/manage/products">Manage
+							Products</a></li>
+				</security:authorize>
 			</ul>
 
 			<ul class="nav navbar-nav navbar-right">
 				<security:authorize access="isAnonymous()">
 
 					<li id="register"><a href="${contextRoot}/register"
-						class="nav-link">Sign up</a></li>
-					<li id="login"><a href="${contextRoot}/login" class="nav-link">Login</a></li>
+						class="nav-link category-item">Sign up</a></li>
+					<li id="login"><a href="${contextRoot}/login"
+						class="nav-link category-item">Login</a></li>
 				</security:authorize>
 
 				<security:authorize access="isAuthenticated()">
 
-					<li class="dropdown" id="userCart"><a href="javacript:void(0)"
+					<li class="dropdown border border-dark" id="userCart"><a
+						style="background: white;" href="javacript:void(0)"
 						class="btn btn-default dropdown-toggle" id="dropdownMeul"
-						data-toggle="dropdown"> ${userModel.fullname}<span
-							class="caret"></span>
+						data-toggle="dropdown"> <span class="caret">${userModel.fullname}</span>
 
 					</a>
-						<ul class="dropdown-menu">
+						<ul class="dropdown-menu px-3">
 							<security:authorize access="hasAuthority('USER')">
-
-								<li><a href="${contextRoot}/cart/show"> <span
-										class="glyphicon glyphicon-shopping-cart"> </span> <span
-										class="badge">${userModel.cart.cartLines }</span>
-									&#2547; -	${userModel.cart.grandTotal} /-
+								<hr>
+								<li><a href="${contextRoot}/cart/show" class="category-item"> <span
+										class="glyphicon glyphicon-shopping-cart" style="width:10px; height:10px"> </span> <span
+										class="badge display-3">${userModel.cart.cartLines }</span> 
+										<span style="font-size:15px">&#2547; -
+										${userModel.cart.grandTotal}</span>
 								</a></li>
-
+								<hr>
 								<li class="divider" role="separator"></li>
 							</security:authorize>
-							<li><a href="${contextRoot}/perform-logout">Logout</a></li>
-
+							<li><a href="${contextRoot}/perform-logout" class="category-item">Logout</a></li>
+							<hr>
 						</ul></li>
 				</security:authorize>
 			</ul>
@@ -65,7 +70,5 @@
 </nav>
 
 <script>
-
-window.userRole = '${userModel.role}'
-
+	window.userRole = '${userModel.role}'
 </script>

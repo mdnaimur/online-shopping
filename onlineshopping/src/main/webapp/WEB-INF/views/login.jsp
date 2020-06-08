@@ -25,6 +25,12 @@
 	window.contextRoot = '${contextRoot}';
 </script>
 <!-- Bootstrap core CSS -->
+
+
+
+
+
+
 <link href="${css}/bootstrap.min.css" rel="stylesheet">
 
 
@@ -55,15 +61,15 @@
 
 				<c:if test="${not empty message}">
 					<div class="row">
-						<div class="col-xs-12 col-md-offset-2 col-md-8">
-							<div class="alert alert-danger fade in">${message}</div>
+						<div class="col-xs-8 col-md-4 mx-auto -cente">
+							<div class="alert alert-danger ">${message}</div>
 						</div>
 					</div>
 				</c:if>
 
 				<c:if test="${not empty logout}">
 					<div class="row">
-						<div class="col-xs-12 col-md-offset-2 col-md-8">
+						<div class="col-xs-8 col-md-offset-2 col-md-4 mx-auto ">
 							<div class="alert alert-success">${logout}</div>
 						</div>
 					</div>
@@ -71,7 +77,7 @@
 
 				<div class="row">
 
-					<div class="col-md-offset-3 col-md-6">
+					<div class="col-md-offset-3 col-md-6 mx-auto">
 
 						<div class="panel panel-primary">
 
@@ -101,16 +107,16 @@
 									<div class="form-group">
 										<div class="col-md-offset-4 col-md-8">
 											<input type="hidden" name="${_csrf.parameterName}"
-												value="${_csrf.token}" /> <input type="submit" value="Login"
-												class="btn btn-primary" />
+												value="${_csrf.token}" /> <input type="submit"
+												value="Login" class="btn btn-primary" />
 										</div>
 									</div>
 								</form>
 
 							</div>
 							<div class="panel-footer">
-								<div class="text-right">
-									New User - <a href="${contextRoot}/register">Register Here</a>
+								<div class="text-center">
+									New User - <a class="text-white" href="${contextRoot}/register">Register Here</a>
 								</div>
 							</div>
 

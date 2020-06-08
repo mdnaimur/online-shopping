@@ -79,4 +79,7 @@
 	<bean id="validator"
 		class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
 	</bean>
+	<context:annotation-config>
+		<context:annotation-config></context:annotation-config>
+	</context:annotation-config>
 </beans>
