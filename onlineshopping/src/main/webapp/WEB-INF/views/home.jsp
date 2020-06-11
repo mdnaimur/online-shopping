@@ -21,6 +21,11 @@
 						class="active"></li>
 					<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
 					<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+					<li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+					<li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+					<li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+					<li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
+					<li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
 				</ol>
 				<div class="carousel-inner" role="listbox">
 					<div class="carousel-item active">
@@ -33,6 +38,22 @@
 					</div>
 					<div class="carousel-item">
 						<img class="d-block img-fluid" src="${images}/banner3.jpg"
+							alt="Third slide">
+					</div>
+						<div class="carousel-item">
+						<img class="d-block img-fluid" src="${images}/banner4.jpg"
+							alt="Third slide">
+					</div>
+						<div class="carousel-item">
+						<img class="d-block img-fluid" src="${images}/banner5.jpg"
+							alt="Third slide">
+					</div>
+						<div class="carousel-item">
+						<img class="d-block img-fluid" src="${images}/banner6.jpg"
+							alt="Third slide">
+					</div>
+						<div class="carousel-item">
+						<img class="d-block img-fluid" src="${images}/banner7.jpg"
 							alt="Third slide">
 					</div>
 				</div>

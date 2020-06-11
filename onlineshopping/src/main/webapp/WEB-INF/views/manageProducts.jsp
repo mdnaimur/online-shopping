@@ -4,7 +4,7 @@
 	<div class="row">
 
 		<c:if test="${not empty message}">
-			<div class="col-xs-12">
+			<div class="col-xs-12 mx-auto">
 				<div class="alert alert-success alert-dismissible">
 					<button type="button" class="close" data-dismiss="alert">&times;</button>
 

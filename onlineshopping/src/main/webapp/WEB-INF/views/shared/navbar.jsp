@@ -60,8 +60,9 @@
 								<hr>
 								<li class="divider" role="separator"></li>
 							</security:authorize>
+							<hr/>
 							<li><a href="${contextRoot}/perform-logout" class="category-item">Logout</a></li>
-							<hr>
+							<hr/>
 						</ul></li>
 				</security:authorize>
 			</ul>

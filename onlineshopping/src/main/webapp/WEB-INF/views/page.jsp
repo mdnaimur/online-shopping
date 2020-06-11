@@ -51,7 +51,7 @@
 <!-- Custom styles for this template -->
 
 <link href="${css}/myapp.css" rel="stylesheet">
-<link rel="shortcut icon" href="favicon.ico">
+<link rel="shortcut icon" href="${images}/mmn.jpg">
 </head>
 <body>
 	<div class="wrapper">
@@ -107,15 +107,14 @@
 			
 			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
 			<script src="https://use.fontawesome.com/518ddb4c0a.js"></script>
-		<!--  -
+	
 		<script src="${js}/bootstrap.bundle.min.js"></script>
 		
 		<script src="${js}/jquery.dataTables.js"></script>
 		<script src="${js}/dataTables.bootstrap.js"></script>
 		<script src="${js}/bootbox.min.js"></script>
 		<script src="${js}/jquery.validate.js"></script>
-->
-		<!-- self coded js -->
+	<!-- self coded js -->
 		<script src="${js}/myapp.js"></script>
 	</div>
 </body>
