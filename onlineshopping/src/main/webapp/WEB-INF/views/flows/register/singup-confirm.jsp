@@ -11,6 +11,7 @@
 				<div class="panel-heading">
 					<h4>Personal Details</h4>
 				</div>
+				<hr>
 
 				<div class="panel-body">
 					<div class="text-center">
@@ -29,7 +30,7 @@
 						</h4>
 						<p>
 							<a href="${flowExecutionUrl}&_eventId_personal"
-								class="btn btn-primary">Edit</a>
+								class="btn btn-warning">Edit</a>
 						</p>
 					</div>
 				</div>
@@ -46,18 +47,21 @@
 				<div class="panel-heading">
 					<h4>Billing Address</h4>
 				</div>
-
+   <hr>
 				<div class="panel-body">
-					<div class="text-center">
-						<p>${registerModel.billing.addressLineOne},</p>
-						<p>${registerModel.billing.addressLineTwo},</p>
-						<p>${registerModel.billing.city}-
-							${registerModel.billing.postalCode},</p>
-						<p>${registerModel.billing.state}</p>
-						<p>${registerModel.billing.country}</p>
+					<div class="text-center display-4">
+
+						<address>
+							<strong>${registerModel.billing.addressLineOne},${registerModel.billing.addressLineTwo},</strong><br>
+							${registerModel.billing.city}-
+							${registerModel.billing.postalCode},<br>
+							${registerModel.billing.state}, ${registerModel.billing.country}<br>
+
+						</address>
+
 						<p>
 							<a href="${flowExecutionUrl}&_eventId_billing"
-								class="btn btn-primary">Edit</a>
+								class="btn btn-warning">Edit</a>
 						</p>
 					</div>
 				</div>
@@ -68,14 +72,14 @@
 
 	</div>
 
-	<div class="row">
+	<div class="row float-right">
 
 		<div class="col-sm-4 col-sm-offset-4">
 
-			<div class="text-center">
+			<div class="text-center ">
 
 				<a href="${flowExecutionUrl}&_eventId_submit"
-					class="btn btn-lg btn-primary">Confirm</a>
+					class="btn btn-lg btn-success">Confirm</a>
 
 			</div>
 

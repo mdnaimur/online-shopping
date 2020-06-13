@@ -5,7 +5,7 @@
 	<div class="row">
 
 
-		<div class="col-sm-offset-4 col-sm-4">
+		<div class="col-sm-offset-4 col-sm-4 float-center">
 			<div class="text-center">
 				<h1>Welcome!</h1>
 				<h3>onlineshopping.com</h3>
